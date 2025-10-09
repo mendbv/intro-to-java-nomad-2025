@@ -1,15 +1,14 @@
 import java.util.Scanner;
-import java.util.Locale;
 
-void main(String[] args) {
-    Scanner scanner = new Scanner(System.in).useLocale(Locale.US);
+public static void main(String[] args) {
+    Scanner scanner = new Scanner(System.in);
 
     int code = scanner.nextInt();
     int quantity = scanner.nextInt();
 
-    double productPrice = 0.0;
+    double productPrice = 0;
 
-    switch(code) {
+    switch(code){
         case 1:
             productPrice = 4.00;
             break;
@@ -24,14 +23,11 @@ void main(String[] args) {
             break;
         case 5:
             productPrice = 1.50;
-            break;
         default:
-            productPrice = 0.0;
+            System.out.println("Wrong product code!");
     }
 
-    double totalValue = productPrice * quantity;
+    double result = (productPrice * quantity);
 
-    System.out.printf("Total: R$ %.2f%n", totalValue);
-
-    scanner.close();
+    System.out.printf("Total: R$ %.2f%n", result);
 }
